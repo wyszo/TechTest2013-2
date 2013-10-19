@@ -12,17 +12,14 @@
 		318E48A61812DD1200F2032A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318E48A51812DD1200F2032A /* CoreGraphics.framework */; };
 		318E48AC1812DD1200F2032A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 318E48AA1812DD1200F2032A /* InfoPlist.strings */; };
 		318E48AE1812DD1200F2032A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48AD1812DD1200F2032A /* main.m */; };
-		318E48B21812DD1200F2032A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48B11812DD1200F2032A /* AppDelegate.m */; };
-		318E48B41812DD1200F2032A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 318E48B31812DD1200F2032A /* Default.png */; };
-		318E48B61812DD1200F2032A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 318E48B51812DD1200F2032A /* Default@2x.png */; };
-		318E48B81812DD1200F2032A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 318E48B71812DD1200F2032A /* Default-568h@2x.png */; };
-		318E48BB1812DD1200F2032A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48BA1812DD1200F2032A /* ViewController.m */; };
 		318E48BE1812DD1200F2032A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318E48BC1812DD1200F2032A /* ViewController.xib */; };
 		318E48C61812DD1300F2032A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318E48C51812DD1300F2032A /* SenTestingKit.framework */; };
 		318E48C71812DD1300F2032A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318E48A11812DD1200F2032A /* UIKit.framework */; };
 		318E48C81812DD1300F2032A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318E48A31812DD1200F2032A /* Foundation.framework */; };
 		318E48D01812DD1300F2032A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 318E48CE1812DD1300F2032A /* InfoPlist.strings */; };
 		318E48D31812DD1300F2032A /* TABTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48D21812DD1300F2032A /* TABTestTests.m */; };
+		318E48F01812DEDA00F2032A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48ED1812DEDA00F2032A /* AppDelegate.m */; };
+		318E48F11812DEDA00F2032A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48EF1812DEDA00F2032A /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,13 +41,6 @@
 		318E48AB1812DD1200F2032A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		318E48AD1812DD1200F2032A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		318E48AF1812DD1200F2032A /* TABTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TABTest-Prefix.pch"; sourceTree = "<group>"; };
-		318E48B01812DD1200F2032A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		318E48B11812DD1200F2032A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		318E48B31812DD1200F2032A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		318E48B51812DD1200F2032A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		318E48B71812DD1200F2032A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		318E48B91812DD1200F2032A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		318E48BA1812DD1200F2032A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		318E48BD1812DD1200F2032A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		318E48C41812DD1300F2032A /* TABTestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TABTestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		318E48C51812DD1300F2032A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -58,6 +48,10 @@
 		318E48CF1812DD1300F2032A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		318E48D11812DD1300F2032A /* TABTestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TABTestTests.h; sourceTree = "<group>"; };
 		318E48D21812DD1300F2032A /* TABTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TABTestTests.m; sourceTree = "<group>"; };
+		318E48EC1812DEDA00F2032A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		318E48ED1812DEDA00F2032A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		318E48EE1812DEDA00F2032A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		318E48EF1812DEDA00F2032A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,11 +111,8 @@
 		318E48A71812DD1200F2032A /* TABTest */ = {
 			isa = PBXGroup;
 			children = (
-				318E48B01812DD1200F2032A /* AppDelegate.h */,
-				318E48B11812DD1200F2032A /* AppDelegate.m */,
-				318E48B91812DD1200F2032A /* ViewController.h */,
-				318E48BA1812DD1200F2032A /* ViewController.m */,
-				318E48BC1812DD1200F2032A /* ViewController.xib */,
+				318E48DC1812DE1F00F2032A /* Source */,
+				318E48EB1812DE4600F2032A /* Xib */,
 				318E48A81812DD1200F2032A /* Supporting Files */,
 			);
 			path = TABTest;
@@ -134,9 +125,6 @@
 				318E48AA1812DD1200F2032A /* InfoPlist.strings */,
 				318E48AD1812DD1200F2032A /* main.m */,
 				318E48AF1812DD1200F2032A /* TABTest-Prefix.pch */,
-				318E48B31812DD1200F2032A /* Default.png */,
-				318E48B51812DD1200F2032A /* Default@2x.png */,
-				318E48B71812DD1200F2032A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -158,6 +146,41 @@
 				318E48CE1812DD1300F2032A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		318E48DC1812DE1F00F2032A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				318E48F21812DEDE00F2032A /* AppDelegate */,
+				318E48F31812DEE400F2032A /* ViewController */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		318E48EB1812DE4600F2032A /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				318E48BC1812DD1200F2032A /* ViewController.xib */,
+			);
+			name = Xib;
+			sourceTree = "<group>";
+		};
+		318E48F21812DEDE00F2032A /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				318E48EC1812DEDA00F2032A /* AppDelegate.h */,
+				318E48ED1812DEDA00F2032A /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		318E48F31812DEE400F2032A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				318E48EE1812DEDA00F2032A /* ViewController.h */,
+				318E48EF1812DEDA00F2032A /* ViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +255,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				318E48AC1812DD1200F2032A /* InfoPlist.strings in Resources */,
-				318E48B41812DD1200F2032A /* Default.png in Resources */,
-				318E48B61812DD1200F2032A /* Default@2x.png in Resources */,
-				318E48B81812DD1200F2032A /* Default-568h@2x.png in Resources */,
 				318E48BE1812DD1200F2032A /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,8 +291,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				318E48AE1812DD1200F2032A /* main.m in Sources */,
-				318E48B21812DD1200F2032A /* AppDelegate.m in Sources */,
-				318E48BB1812DD1200F2032A /* ViewController.m in Sources */,
+				318E48F01812DEDA00F2032A /* AppDelegate.m in Sources */,
+				318E48F11812DEDA00F2032A /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
