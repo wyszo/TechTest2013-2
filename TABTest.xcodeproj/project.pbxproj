@@ -20,6 +20,8 @@
 		318E48D31812DD1300F2032A /* TABTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48D21812DD1300F2032A /* TABTestTests.m */; };
 		318E48F01812DEDA00F2032A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48ED1812DEDA00F2032A /* AppDelegate.m */; };
 		318E48F11812DEDA00F2032A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48EF1812DEDA00F2032A /* ViewController.m */; };
+		318E48F61812DFCB00F2032A /* OurTeam.html in Resources */ = {isa = PBXBuildFile; fileRef = 318E48F51812DFCB00F2032A /* OurTeam.html */; };
+		318E48F71812DFCB00F2032A /* OurTeam.html in Resources */ = {isa = PBXBuildFile; fileRef = 318E48F51812DFCB00F2032A /* OurTeam.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 		318E48ED1812DEDA00F2032A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		318E48EE1812DEDA00F2032A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		318E48EF1812DEDA00F2032A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		318E48F51812DFCB00F2032A /* OurTeam.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = OurTeam.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,7 @@
 			children = (
 				318E48DC1812DE1F00F2032A /* Source */,
 				318E48EB1812DE4600F2032A /* Xib */,
+				318E48F41812DFCA00F2032A /* TestData */,
 				318E48A81812DD1200F2032A /* Supporting Files */,
 			);
 			path = TABTest;
@@ -181,6 +185,14 @@
 				318E48EF1812DEDA00F2032A /* ViewController.m */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		318E48F41812DFCA00F2032A /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				318E48F51812DFCB00F2032A /* OurTeam.html */,
+			);
+			path = TestData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +268,7 @@
 			files = (
 				318E48AC1812DD1200F2032A /* InfoPlist.strings in Resources */,
 				318E48BE1812DD1200F2032A /* ViewController.xib in Resources */,
+				318E48F61812DFCB00F2032A /* OurTeam.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				318E48D01812DD1300F2032A /* InfoPlist.strings in Resources */,
+				318E48F71812DFCB00F2032A /* OurTeam.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
