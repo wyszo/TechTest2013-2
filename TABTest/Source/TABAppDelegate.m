@@ -1,22 +1,22 @@
 //
-//  AppDelegate.m
+//  TABAppDelegate.m
 //  TABTest
 //
 //  Created by Wyszo on 10/19/13.
 //  Copyright (c) 2013 Synappse. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "TABAppDelegate.h"
 
-#import "ViewController.h"
+#import "TABViewController.h"
 
-@implementation AppDelegate
+@implementation TABAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    self.viewController = [[TABViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

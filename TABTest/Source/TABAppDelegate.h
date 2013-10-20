@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  TABAppDelegate.h
 //  TABTest
 //
 //  Created by Wyszo on 10/19/13.
@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class ViewController;
+@class TABViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface TABAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) TABViewController *viewController;
 
 @end

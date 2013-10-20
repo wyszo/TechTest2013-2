@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TABViewController.h
 //  TABTest
 //
 //  Created by Wyszo on 10/19/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface TABViewController : UIViewController
 
 @end

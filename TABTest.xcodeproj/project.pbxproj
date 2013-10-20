@@ -18,8 +18,8 @@
 		318E48C81812DD1300F2032A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318E48A31812DD1200F2032A /* Foundation.framework */; };
 		318E48D01812DD1300F2032A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 318E48CE1812DD1300F2032A /* InfoPlist.strings */; };
 		318E48D31812DD1300F2032A /* TABTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48D21812DD1300F2032A /* TABTestTests.m */; };
-		318E48F01812DEDA00F2032A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48ED1812DEDA00F2032A /* AppDelegate.m */; };
-		318E48F11812DEDA00F2032A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48EF1812DEDA00F2032A /* ViewController.m */; };
+		318E48F01812DEDA00F2032A /* TABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48ED1812DEDA00F2032A /* TABAppDelegate.m */; };
+		318E48F11812DEDA00F2032A /* TABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48EF1812DEDA00F2032A /* TABViewController.m */; };
 		318E48F61812DFCB00F2032A /* OurTeam.html in Resources */ = {isa = PBXBuildFile; fileRef = 318E48F51812DFCB00F2032A /* OurTeam.html */; };
 		318E48F71812DFCB00F2032A /* OurTeam.html in Resources */ = {isa = PBXBuildFile; fileRef = 318E48F51812DFCB00F2032A /* OurTeam.html */; };
 /* End PBXBuildFile section */
@@ -50,10 +50,10 @@
 		318E48CF1812DD1300F2032A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		318E48D11812DD1300F2032A /* TABTestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TABTestTests.h; sourceTree = "<group>"; };
 		318E48D21812DD1300F2032A /* TABTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TABTestTests.m; sourceTree = "<group>"; };
-		318E48EC1812DEDA00F2032A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		318E48ED1812DEDA00F2032A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		318E48EE1812DEDA00F2032A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		318E48EF1812DEDA00F2032A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		318E48EC1812DEDA00F2032A /* TABAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABAppDelegate.h; sourceTree = "<group>"; };
+		318E48ED1812DEDA00F2032A /* TABAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABAppDelegate.m; sourceTree = "<group>"; };
+		318E48EE1812DEDA00F2032A /* TABViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABViewController.h; sourceTree = "<group>"; };
+		318E48EF1812DEDA00F2032A /* TABViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABViewController.m; sourceTree = "<group>"; };
 		318E48F51812DFCB00F2032A /* OurTeam.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = OurTeam.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,8 +172,8 @@
 		318E48F21812DEDE00F2032A /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				318E48EC1812DEDA00F2032A /* AppDelegate.h */,
-				318E48ED1812DEDA00F2032A /* AppDelegate.m */,
+				318E48EC1812DEDA00F2032A /* TABAppDelegate.h */,
+				318E48ED1812DEDA00F2032A /* TABAppDelegate.m */,
 			);
 			name = AppDelegate;
 			sourceTree = "<group>";
@@ -181,8 +181,8 @@
 		318E48F31812DEE400F2032A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				318E48EE1812DEDA00F2032A /* ViewController.h */,
-				318E48EF1812DEDA00F2032A /* ViewController.m */,
+				318E48EE1812DEDA00F2032A /* TABViewController.h */,
+				318E48EF1812DEDA00F2032A /* TABViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -240,6 +240,7 @@
 		318E48961812DD1200F2032A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = TAB;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Synappse;
 			};
@@ -305,8 +306,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				318E48AE1812DD1200F2032A /* main.m in Sources */,
-				318E48F01812DEDA00F2032A /* AppDelegate.m in Sources */,
-				318E48F11812DEDA00F2032A /* ViewController.m in Sources */,
+				318E48F01812DEDA00F2032A /* TABAppDelegate.m in Sources */,
+				318E48F11812DEDA00F2032A /* TABViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +488,7 @@
 				318E48D81812DD1300F2032A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		318E48D91812DD1300F2032A /* Build configuration list for PBXNativeTarget "TABTestTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +497,7 @@
 				318E48DB1812DD1300F2032A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
