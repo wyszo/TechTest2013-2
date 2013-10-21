@@ -9,6 +9,7 @@
 #import "TABViewController.h"
 #import "TABEmployeesDataSource.h"
 #import "NSError+CommonErrors.h"
+#import "NSArray+EmployeesCollection.h"
 
 
 @interface TABViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -89,14 +90,14 @@
 
 - (void) configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
     
-    TABEmployee *employee = _employeesDataSource.employees[indexPath.row]; // TODO: unsafe!
-    
+    TABEmployee *employee = [_employeesDataSource.employees employeeForIndex:indexPath.row];
+
     if (employee) {
         cell.textLabel.text = employee.name;
         cell.detailTextLabel.text = employee.title;
     }
-    
-//    cell.imageView.image = [UIImage imageNamed:];
+
+    // TODO: fill image view
 }
 
 @end
