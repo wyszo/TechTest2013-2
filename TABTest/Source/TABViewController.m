@@ -7,14 +7,14 @@
 //
 
 #import "TABViewController.h"
-#import "TABEmployeesDataSource.h"
+#import "TABEmployeesOfflineDataSource.h"
 #import "NSError+CommonErrors.h"
 #import "NSArray+EmployeesCollection.h"
 
 
 @interface TABViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) TABEmployeesDataSource *employeesDataSource;
+@property (nonatomic, strong) id<TABEmployeesDataSource> employeesDataSource;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
 
-    self.employeesDataSource = [TABEmployeesDataSource new];
+    self.employeesDataSource = [TABEmployeesOfflineDataSource new];
     [self fetchEmployees];
 }
 

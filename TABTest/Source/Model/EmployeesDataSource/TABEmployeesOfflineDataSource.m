@@ -2,7 +2,7 @@
 // Created by Tomasz Wyszomirski on 21/10/13.
 // Copyright (c) 2013 Synappse. All rights reserved.
 
-#import "TABEmployeesDataSource.h"
+#import "TABEmployeesOfflineDataSource.h"
 #import "TABHTMLParser.h"
 #import "NSString+XHTML.h"
 
@@ -10,7 +10,7 @@
 static NSString *const kHTMLTestFileName = @"People";
 
 
-@interface TABEmployeesDataSource ()
+@interface TABEmployeesOfflineDataSource ()
 
 @property (nonatomic, strong) NSArray *employees;
 @property (nonatomic, strong) TABHTMLParser *parser;
@@ -18,7 +18,7 @@ static NSString *const kHTMLTestFileName = @"People";
 @end
 
 
-@implementation TABEmployeesDataSource
+@implementation TABEmployeesOfflineDataSource
 
 
 - (void) asyncFetchEmployeesCompletion:(fetchEmployeesCompletionBlock)completionBlock {
@@ -49,7 +49,7 @@ static NSString *const kHTMLTestFileName = @"People";
 
     NSData *xhtmlData = [htmlString xhtmlData];
 
-    __weak TABEmployeesDataSource *weakSelf = self;
+    __weak TABEmployeesOfflineDataSource *weakSelf = self;
 
     [self.parser parseXHTMLData:xhtmlData completion:^(NSArray *employees, NSError *error) {
 

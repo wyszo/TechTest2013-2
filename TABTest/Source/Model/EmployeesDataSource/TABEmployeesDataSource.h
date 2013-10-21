@@ -4,11 +4,10 @@
 
 #import "TABEmployee.h"
 
-
 typedef void (^fetchEmployeesCompletionBlock)(NSArray *employees, NSError *error);
 
 
-@interface TABEmployeesDataSource : NSObject
+@protocol TABEmployeesDataSource <NSObject>
 
 @property (nonatomic, strong, readonly) NSArray *employees;
 
