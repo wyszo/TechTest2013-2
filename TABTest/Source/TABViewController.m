@@ -10,6 +10,7 @@
 #import "TABEmployeesNetworkDataSource.h"
 #import "NSError+CommonErrors.h"
 #import "NSArray+EmployeesCollection.h"
+#import "Configuration.h"
 
 
 @interface TABViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -92,12 +93,31 @@
     
     TABEmployee *employee = [_employeesDataSource.employees employeeForIndex:indexPath.row];
 
+    cell.imageView.image = nil;
+    
     if (employee) {
         cell.textLabel.text = employee.name;
         cell.detailTextLabel.text = employee.title;
     }
 
-    // TODO: fill image view
+    [self setupImageForCell:cell withURLString:employee.imageURL];
+}
+
+- (void) setupImageForCell:(UITableViewCell *)cell withURLString:(NSString *)urlString {
+
+    NSString *imageURLString = [NSString stringWithFormat:@"%@/%@", kTheAppBusinessPeoplePageURL, urlString];
+    NSURL *imageURL = [NSURL URLWithString:imageURLString];
+
+    // ideally we should cancel request if cell stopped being visible and request didn't finish
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.imageView.image = [UIImage imageWithData:imageData];
+            [cell setNeedsLayout];
+        });
+    });
 }
 
 @end
