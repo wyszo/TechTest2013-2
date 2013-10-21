@@ -7,6 +7,10 @@
 
 @implementation NSString (Common)
 
+- (NSString *) stringByTrimmingWhitespaceAndNewline {
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
 - (BOOL) containsSubstring:(NSString *)substring {
 
     BOOL containsSubstring = ([self rangeOfString:substring].location != NSNotFound);

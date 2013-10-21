@@ -5,6 +5,8 @@
 
 @interface NSString (Common)
 
+- (NSString *) stringByTrimmingWhitespaceAndNewline;
+
 - (BOOL) containsSubstring:(NSString *)substring;
 
 @end

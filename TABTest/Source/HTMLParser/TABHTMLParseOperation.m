@@ -17,6 +17,7 @@
 static NSString *const kDivTagName = @"div";
 static NSString *const kImgTagName = @"img";
 static NSString *const kPTagName = @"p";
+static NSString *const kH3TagName = @"h3";
 
 static NSString *const kClassAttributeName = @"class";
 static NSString *const kSrcAttributeName = @"src";
@@ -88,13 +89,13 @@ static NSString *const kProfileClassAttributeType = @"profile";
     DLog(@"html element found, adding new employee item: %@", elementName);
 
     _currentElement = elementName;
-    _currentEmployee = [TABMutableEmployee new];
     
     if ([elementName isEqualToString:kDivTagName]) {
 
         if ([attributeDict[kClassAttributeName] containsSubstring:kProfileClassAttributeType] == YES) {
 
             _insideEmployeeElement = YES;
+            _currentEmployee = [TABMutableEmployee new];
 
             NSString *employeeId = attributeDict[kIdAttributeName];
             DLog(@"Employee div found for %@", employeeId);
@@ -137,6 +138,19 @@ static NSString *const kProfileClassAttributeType = @"profile";
 
         if ([_currentElement isEqualToString:kPTagName]) {
             _currentEmployee.description = [NSString safeAppendString:string toString:_currentEmployee.description];
+        }
+        else if ([_currentElement isEqualToString:kH3TagName]) {
+
+            NSString *trimmed = [string stringByTrimmingWhitespaceAndNewline];
+            if (trimmed.length > 0)
+            {
+                if (_currentEmployee.name.length == 0) {
+                    _currentEmployee.name = [NSString safeAppendString:trimmed toString:_currentEmployee.name];
+                }
+                else {
+                    _currentEmployee.title = [NSString safeAppendString:trimmed toString:_currentEmployee.title];
+                }
+            }
         }
     }
 }
