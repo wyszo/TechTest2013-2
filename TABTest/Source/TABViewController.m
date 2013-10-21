@@ -16,7 +16,7 @@
 
 static NSString *kEmployeeCellId = @"EmployeeCell";
 static NSString *kEmployeeCellNibName = @"TABEmployeeCell";
-static NSUInteger kEmployeeCellHeight = 200;
+static NSUInteger kEmployeeCellHeight = 270;
 
 
 @interface TABViewController () <UITableViewDataSource, UITableViewDelegate>
