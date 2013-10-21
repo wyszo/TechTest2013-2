@@ -47,13 +47,10 @@ static NSString *const kHTMLTestFileName = @"People";
 
     [self.parser parseXHTMLData:xhtmlData completion:^(NSArray *employees, NSError *error) {
 
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        DLog(@"Number of fetched employees: %d", employees.count);
 
-            DLog(@"Number of fetched employees: %d", employees.count);
-
-            weakSelf.employees = employees;
-            completionBlock(employees, error);
-        }];
+        weakSelf.employees = employees;
+        completionBlock(employees, error);
     }];
 }
 
