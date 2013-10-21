@@ -11,6 +11,6 @@
 
 @interface TABHTMLParser : NSObject
 
-- (void) parseData:(NSData *)htmlData completion:(htmlParsingCompletionBlock)completionBlock;
+- (void) parseXHTMLData:(NSData *)htmlData completion:(htmlParsingCompletionBlock)completionBlock;
 
 @end

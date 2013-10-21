@@ -21,7 +21,7 @@
 
 @implementation TABHTMLParser
 
-- (void) parseData:(NSData *)htmlData completion:(htmlParsingCompletionBlock)completionBlock {
+- (void) parseXHTMLData:(NSData *)htmlData completion:(htmlParsingCompletionBlock)completionBlock {
 
     if (htmlData.length == 0) {
         
