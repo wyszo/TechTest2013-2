@@ -11,6 +11,12 @@
 #import "NSError+CommonErrors.h"
 #import "NSArray+EmployeesCollection.h"
 #import "Configuration.h"
+#import "TABEmployeeCell.h"
+
+
+static NSString *kEmployeeCellId = @"EmployeeCell";
+static NSString *kEmployeeCellNibName = @"TABEmployeeCell";
+static NSUInteger kEmployeeCellHeight = 200;
 
 
 @interface TABViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -26,9 +32,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    [self registerCellsNib];
     self.employeesDataSource = [TABEmployeesNetworkDataSource new];
     [self fetchEmployees];
+}
+
+- (void) registerCellsNib {
+    
+    UINib *nib = [UINib nibWithNibName:kEmployeeCellNibName bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:nib forCellReuseIdentifier:kEmployeeCellId];
 }
 
 - (void) fetchEmployees {
@@ -74,50 +87,20 @@
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    TABEmployeeCell *cell = [tableView dequeueReusableCellWithIdentifier:kEmployeeCellId];
+    cell.avatar.image = nil;
+    
+    TABEmployee *employee = [_employeesDataSource.employees employeeForIndex:indexPath.row];
+    [cell configureWithEmployee:employee];
 
-    
-    static NSString *cellIdentifier = @"EmployeeCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-    }
-    
-    [self configureCell:cell forIndexPath:indexPath];
     return cell;
 }
 
-#pragma mark - TableViewCell Customization
+#pragma mark - UITableViewDelegate
 
-- (void) configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-    
-    TABEmployee *employee = [_employeesDataSource.employees employeeForIndex:indexPath.row];
-
-    cell.imageView.image = nil;
-    
-    if (employee) {
-        cell.textLabel.text = employee.name;
-        cell.detailTextLabel.text = employee.title;
-    }
-
-    [self setupImageForCell:cell withURLString:employee.imageURL];
-}
-
-- (void) setupImageForCell:(UITableViewCell *)cell withURLString:(NSString *)urlString {
-
-    NSString *imageURLString = [NSString stringWithFormat:@"%@/%@", kTheAppBusinessPeoplePageURL, urlString];
-    NSURL *imageURL = [NSURL URLWithString:imageURLString];
-
-    // ideally we should cancel request if cell stopped being visible and request didn't finish
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-
-        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-
-        dispatch_async(dispatch_get_main_queue(), ^{
-            cell.imageView.image = [UIImage imageWithData:imageData];
-            [cell setNeedsLayout];
-        });
-    });
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return kEmployeeCellHeight;
 }
 
 @end

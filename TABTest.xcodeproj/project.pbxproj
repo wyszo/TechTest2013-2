@@ -23,6 +23,8 @@
 		31B6D2F9181502D6007E99AF /* NSError+CommonErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B6D2F3181502D6007E99AF /* NSError+CommonErrors.m */; };
 		31B6D2FA181502D6007E99AF /* TABHTMLParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B6D2F6181502D6007E99AF /* TABHTMLParseOperation.m */; };
 		31B6D2FB181502D6007E99AF /* TABHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B6D2F8181502D6007E99AF /* TABHTMLParser.m */; };
+		31B6D2FE181569D6007E99AF /* TABEmployeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B6D2FC181569D6007E99AF /* TABEmployeeCell.xib */; };
+		31B6D30118156ACA007E99AF /* TABEmployeeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B6D30018156ACA007E99AF /* TABEmployeeCell.m */; };
 		6C5AC00CAFCD7ED5C99E01D0 /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5AC50238550CAC62D7AC32 /* NSString+Common.m */; };
 		6C5AC0C68239906D602B1233 /* NSString+XHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5AC0CEE0D10A69874777EF /* NSString+XHTML.m */; };
 		6C5AC17936C84B94691B8C8E /* TABEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5AC09B83611D458FE1C3D0 /* TABEmployee.m */; };
@@ -74,6 +76,9 @@
 		31B6D2F6181502D6007E99AF /* TABHTMLParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABHTMLParseOperation.m; sourceTree = "<group>"; };
 		31B6D2F7181502D6007E99AF /* TABHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABHTMLParser.h; sourceTree = "<group>"; };
 		31B6D2F8181502D6007E99AF /* TABHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABHTMLParser.m; sourceTree = "<group>"; };
+		31B6D2FD181569D6007E99AF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TABEmployeeCell.xib; sourceTree = "<group>"; };
+		31B6D2FF18156ACA007E99AF /* TABEmployeeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABEmployeeCell.h; sourceTree = "<group>"; };
+		31B6D30018156ACA007E99AF /* TABEmployeeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABEmployeeCell.m; sourceTree = "<group>"; };
 		6C5AC012BD6F822BC463A46D /* TABMutableEmployee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMutableEmployee.h; sourceTree = "<group>"; };
 		6C5AC0452B8E14E7ED0E7CA2 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		6C5AC09B83611D458FE1C3D0 /* TABEmployee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABEmployee.m; sourceTree = "<group>"; };
@@ -215,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				318E48BC1812DD1200F2032A /* ViewController.xib */,
+				31B6D2FC181569D6007E99AF /* TABEmployeeCell.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -233,6 +239,8 @@
 			children = (
 				318E48EE1812DEDA00F2032A /* TABViewController.h */,
 				318E48EF1812DEDA00F2032A /* TABViewController.m */,
+				31B6D2FF18156ACA007E99AF /* TABEmployeeCell.h */,
+				31B6D30018156ACA007E99AF /* TABEmployeeCell.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -402,6 +410,7 @@
 				318E48AC1812DD1200F2032A /* InfoPlist.strings in Resources */,
 				318E48BE1812DD1200F2032A /* ViewController.xib in Resources */,
 				6C5ACFFD7AA11AD1EDD8E147 /* People.html in Resources */,
+				31B6D2FE181569D6007E99AF /* TABEmployeeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +447,7 @@
 			files = (
 				318E48AE1812DD1200F2032A /* main.m in Sources */,
 				31B6D2F9181502D6007E99AF /* NSError+CommonErrors.m in Sources */,
+				31B6D30118156ACA007E99AF /* TABEmployeeCell.m in Sources */,
 				318E48F01812DEDA00F2032A /* TABAppDelegate.m in Sources */,
 				31B6D2FB181502D6007E99AF /* TABHTMLParser.m in Sources */,
 				318E48F11812DEDA00F2032A /* TABViewController.m in Sources */,
@@ -498,6 +508,14 @@
 				318E48CF1812DD1300F2032A /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		31B6D2FC181569D6007E99AF /* TABEmployeeCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31B6D2FD181569D6007E99AF /* en */,
+			);
+			name = TABEmployeeCell.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
