@@ -1,0 +1,16 @@
+Here's list of questions that would normally be asked to Team Leader/Technical Architect/Project Manager/whoever responsible. 
+
+For this assignment I just assumed I should use default SDK constructs whenever possible and go along with 'standard', modern practices. Let me know if you want me to change any of the assumptions. 
+
+My questions: 
+- what type of memory management should I use? MRC or ARC? (ARC assumed)
+- should I rely on html parsing or is using REST API allowed in this case; what are the api calls? 
+- should I use native XML parsing abilities or rather custom XML parsing library? (using NSXMLParser)
+- am I allowed to use custom library for network requests or should I use the native one? (using just NSURLConnection and sendAsynchronousRequest:queue:completionHandler: method)
+- should I write unit tests for the project? 
+- should I write unit tests first (before writing code; TDD)? 
+- should I use default or external library (kiwi?) for unit testing? 
+- should I also include behavioral testing?
+- should the app be targeted for iPhone/iPad/both? 
+- should I use storyboards or rather xibs (or maybe layout interface programmatically)?
+- should the app store cached data from earlier application launches? (assumed it shouldn't)
