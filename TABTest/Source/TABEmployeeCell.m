@@ -8,20 +8,32 @@
 
 #import "TABEmployeeCell.h"
 #import "Configuration.h"
+#import "TABFetchImageDataOperation.h"
+
+
+@interface TABEmployeeCell () <TABFetchImageDataOperationDelegate>
+
+@property (nonatomic, assign) BOOL notDisplayingAnymore;
+@property (nonatomic, strong) NSOperationQueue *operationQueue; // ideally we shouldn't create a separate queue for each cell to increase performance
+
+@end
+
 
 @implementation TABEmployeeCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        
+- (NSOperationQueue *) operationQueue {
+    
+    if (_operationQueue == nil) {
+        _operationQueue = [[NSOperationQueue alloc] init];
     }
-    return self;
+    return _operationQueue;
 }
 
 - (void) configureWithEmployee:(TABEmployee *)employee {
+
+    [self.operationQueue cancelAllOperations];
     
+    _notDisplayingAnymore = NO;
     self.imageView.image = nil;
     
     if (employee) {
@@ -43,20 +55,21 @@
 - (void) setupImageWithURLString:(NSString *)urlString {
     
     NSString *imageURLString = [NSString stringWithFormat:@"%@/%@", kTheAppBusinessPeoplePageURL, urlString];
-    NSURL *imageURL = [NSURL URLWithString:imageURLString];
+
+    TABFetchImageDataOperation *operation = [[TABFetchImageDataOperation alloc] initWithImageUrlString:imageURLString];
+    operation.delegate = self;
     
-    // ideally we should cancel request if cell stopped being visible and request didn't finish
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        
-        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            UIImage *image = [UIImage imageWithData:imageData];
-            self.avatar.image = image;
-            [self setNeedsLayout];
-        });
-    });
+    [self.operationQueue addOperation:operation];
+}
+
+- (void) didEndDisplaying {
+    [self.operationQueue cancelAllOperations];
+}
+
+- (void) fetchOperationDidFinishWithImage:(UIImage *)image {
+    
+    self.avatar.image = image;
+    [self setNeedsLayout];
 }
 
 @end

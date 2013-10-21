@@ -103,4 +103,10 @@ static NSUInteger kEmployeeCellHeight = 200;
     return kEmployeeCellHeight;
 }
 
+- (void) tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    TABEmployeeCell *employeeCell = (TABEmployeeCell *)cell;
+    [employeeCell didEndDisplaying];
+}
+
 @end

@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *description;
 
 - (void) configureWithEmployee:(TABEmployee *)employee;
+- (void) didEndDisplaying;
 
 @end
