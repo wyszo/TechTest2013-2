@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Wyszo. All rights reserved.
 //
 
-typedef void (^htmlParsingCompletionBlock)(NSArray *items, NSError *error);
+typedef void (^htmlParsingCompletionBlock)(NSArray *employees, NSError *error);
 
 
 @interface TABHTMLParseOperation : NSOperation

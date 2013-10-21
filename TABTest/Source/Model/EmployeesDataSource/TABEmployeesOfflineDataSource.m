@@ -4,7 +4,7 @@
 
 #import "TABEmployeesOfflineDataSource.h"
 #import "TABHTMLParser.h"
-#import "NSString+XHTML.h"
+#import "NSData+XHTMLEmployeeDescriptions.h"
 
 
 static NSString *const kHTMLTestFileName = @"People";
@@ -20,10 +20,8 @@ static NSString *const kHTMLTestFileName = @"People";
 
 @implementation TABEmployeesOfflineDataSource
 
-
 - (void) asyncFetchEmployeesCompletion:(fetchEmployeesCompletionBlock)completionBlock {
 
-    // TODO: wire up network connection in here!
     [self tempFillEmployeesWithSampleOfflineFileCompletion:completionBlock];
 }
 
@@ -43,11 +41,7 @@ static NSString *const kHTMLTestFileName = @"People";
 - (void) tempFillEmployeesWithSampleOfflineFileCompletion:(fetchEmployeesCompletionBlock)completionBlock {
 
     NSData *htmlData = [self htmlDataFromSampleFile];
-
-    NSString *htmlString = [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding];
-    htmlString = [self htmlEmployeeDescriptionsFromHtmlString:htmlString];
-
-    NSData *xhtmlData = [htmlString xhtmlData];
+    NSData *xhtmlData = [htmlData xhtmlEmployeeDescriptions];
 
     __weak TABEmployeesOfflineDataSource *weakSelf = self;
 
@@ -70,25 +64,5 @@ static NSString *const kHTMLTestFileName = @"People";
 
     return htmlData;
 }
-
-
-#pragma mark - Preparing html document for parsing
-
-- (NSString *) htmlEmployeeDescriptionsFromHtmlString:(NSString *)htmlString
-{
-    NSString *firstImportantTag = @"<div class=\"row\">";
-    NSString *resultString = @"";
-
-    NSRange range = [htmlString rangeOfString:firstImportantTag];
-
-    if (NSNotFound != range.location) {
-
-        resultString = [htmlString substringFromIndex:range.location];
-        resultString = [NSString stringWithFormat:@"<html>%@", resultString];
-    }
-
-    return resultString;
-}
-
 
 @end

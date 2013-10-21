@@ -4,6 +4,7 @@
 
 #import "TABNetworkManager.h"
 #import "NSError+CommonErrors.h"
+#import "NSURLRequest+Common.h"
 
 
 @implementation TABNetworkManager

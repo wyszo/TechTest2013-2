@@ -7,7 +7,7 @@
 //
 
 #import "TABViewController.h"
-#import "TABEmployeesOfflineDataSource.h"
+#import "TABEmployeesNetworkDataSource.h"
 #import "NSError+CommonErrors.h"
 #import "NSArray+EmployeesCollection.h"
 
@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
 
-    self.employeesDataSource = [TABEmployeesOfflineDataSource new];
+    self.employeesDataSource = [TABEmployeesNetworkDataSource new];
     [self fetchEmployees];
 }
 
