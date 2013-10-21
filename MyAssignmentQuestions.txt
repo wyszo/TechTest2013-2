@@ -1,4 +1,4 @@
-Here's list of questions that would normally be asked to Team Leader/Technical Architect/Project Manager/whoever responsible. 
+Here's list of questions that I would normally ask/discuss with Team Leader/Technical Architect/Project Manager/whoever responsible. 
 
 For this assignment I just assumed I should use default SDK constructs whenever possible and go along with 'standard', modern practices. Let me know if you want me to change any of the assumptions. 
 
