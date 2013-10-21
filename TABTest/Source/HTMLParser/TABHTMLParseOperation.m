@@ -7,14 +7,19 @@
 //
 
 #import "TABHTMLParseOperation.h"
+#import "TABEmployee.h"
 #import "TABMutableEmployee.h"
 #import "NSString+Common.h"
 #import "NSError+CommonErrors.h"
-#import "TABEmployee.h"
+#import "NSString+Concatenation.h"
 
 
 static NSString *const kDivTagName = @"div";
+static NSString *const kImgTagName = @"img";
+static NSString *const kPTagName = @"p";
+
 static NSString *const kClassAttributeName = @"class";
+static NSString *const kSrcAttributeName = @"src";
 static NSString *const kIdAttributeName = @"id";
 
 static NSString *const kProfileClassAttributeType = @"profile";
@@ -23,6 +28,7 @@ static NSString *const kProfileClassAttributeType = @"profile";
 @interface TABHTMLParseOperation () <NSXMLParserDelegate>
 
 @property (nonatomic, strong) NSXMLParser *htmlParser;
+@property (nonatomic, copy) NSString *currentElement;
 @property (nonatomic, assign) BOOL insideEmployeeElement;
 @property (nonatomic, strong) TABMutableEmployee *currentEmployee;
 
@@ -81,6 +87,7 @@ static NSString *const kProfileClassAttributeType = @"profile";
 
     DLog(@"html element found, adding new employee item: %@", elementName);
 
+    _currentElement = elementName;
     _currentEmployee = [TABMutableEmployee new];
     
     if ([elementName isEqualToString:kDivTagName]) {
@@ -91,6 +98,12 @@ static NSString *const kProfileClassAttributeType = @"profile";
 
             NSString *employeeId = attributeDict[kIdAttributeName];
             DLog(@"Employee div found for %@", employeeId);
+        }
+    }
+    else if (_insideEmployeeElement) {
+
+        if ([elementName isEqualToString:kImgTagName]) {
+            _currentEmployee.imageURL = attributeDict[kSrcAttributeName];
         }
     }
 }
@@ -120,6 +133,12 @@ static NSString *const kProfileClassAttributeType = @"profile";
 
 - (void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
 
+    if (_insideEmployeeElement == YES) {
+
+        if ([_currentElement isEqualToString:kPTagName]) {
+            _currentEmployee.description = [NSString safeAppendString:string toString:_currentEmployee.description];
+        }
+    }
 }
 
 - (void) parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {

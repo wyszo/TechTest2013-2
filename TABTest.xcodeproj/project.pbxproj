@@ -27,6 +27,7 @@
 		6C5AC0C68239906D602B1233 /* NSString+XHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5AC0CEE0D10A69874777EF /* NSString+XHTML.m */; };
 		6C5AC17936C84B94691B8C8E /* TABEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5AC09B83611D458FE1C3D0 /* TABEmployee.m */; };
 		6C5AC3B125C228722352981E /* TABMutableEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5ACF5090D273EB610E0EE6 /* TABMutableEmployee.m */; };
+		6C5AC68DDC2F686ACCD67511 /* NSString+Concatenation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5ACD7FB6A9DD0F595AC80E /* NSString+Concatenation.m */; };
 		6C5ACFFD7AA11AD1EDD8E147 /* People.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C5AC92DF7FEEB5A8735648D /* People.html */; };
 /* End PBXBuildFile section */
 
@@ -69,11 +70,13 @@
 		6C5AC012BD6F822BC463A46D /* TABMutableEmployee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMutableEmployee.h; sourceTree = "<group>"; };
 		6C5AC09B83611D458FE1C3D0 /* TABEmployee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABEmployee.m; sourceTree = "<group>"; };
 		6C5AC0CEE0D10A69874777EF /* NSString+XHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XHTML.m"; sourceTree = "<group>"; };
+		6C5AC49C0BA615B5973E9DF1 /* NSString+Concatenation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Concatenation.h"; sourceTree = "<group>"; };
 		6C5AC50238550CAC62D7AC32 /* NSString+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
 		6C5AC5A79D47D43D0154978C /* TABEmployee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABEmployee.h; sourceTree = "<group>"; };
 		6C5AC5B2C3DA6F582B3FECF5 /* NSString+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
 		6C5AC92DF7FEEB5A8735648D /* People.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = People.html; sourceTree = "<group>"; };
 		6C5ACBB331083EA558110AC6 /* NSString+XHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XHTML.h"; sourceTree = "<group>"; };
+		6C5ACD7FB6A9DD0F595AC80E /* NSString+Concatenation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Concatenation.m"; sourceTree = "<group>"; };
 		6C5ACF5090D273EB610E0EE6 /* TABMutableEmployee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMutableEmployee.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +230,8 @@
 				6C5ACBB331083EA558110AC6 /* NSString+XHTML.h */,
 				6C5AC50238550CAC62D7AC32 /* NSString+Common.m */,
 				6C5AC5B2C3DA6F582B3FECF5 /* NSString+Common.h */,
+				6C5AC49C0BA615B5973E9DF1 /* NSString+Concatenation.h */,
+				6C5ACD7FB6A9DD0F595AC80E /* NSString+Concatenation.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 				31B6D2FA181502D6007E99AF /* TABHTMLParseOperation.m in Sources */,
 				6C5AC0C68239906D602B1233 /* NSString+XHTML.m in Sources */,
 				6C5AC00CAFCD7ED5C99E01D0 /* NSString+Common.m in Sources */,
+				6C5AC68DDC2F686ACCD67511 /* NSString+Concatenation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
