@@ -7,16 +7,14 @@
 //
 
 #import "TABViewController.h"
-#import "TABHTMLParser.h"
-#import "NSString+XHTML.h"
+#import "TABEmployeesDataSource.h"
+#import "NSError+CommonErrors.h"
 
 
-static NSString *const kHTMLTestFileName = @"People";
+@interface TABViewController () <UITableViewDataSource, UITableViewDelegate>
 
-
-@interface TABViewController ()
-
-@property (nonatomic, strong) TABHTMLParser *parser;
+@property (nonatomic, strong) TABEmployeesDataSource *employeesDataSource;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -27,53 +25,78 @@ static NSString *const kHTMLTestFileName = @"People";
 {
     [super viewDidLoad];
 
-    [self parseOfflineData]; // TODO: wire up network connection in here!
+    self.employeesDataSource = [TABEmployeesDataSource new];
+    [self fetchEmployees];
 }
 
-- (void) parseOfflineData {
+- (void) fetchEmployees {
 
-    // TODO: encapsulate all this, move it out from here
+    __weak TABViewController *weakSelf = self;
 
-    NSData *htmlData = [self htmlDataFromSampleFile];
+    [self.employeesDataSource asyncFetchEmployeesCompletion:^(NSArray *employees, NSError *error) {
 
-    NSString *htmlString = [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding];
-    htmlString = [self htmlEmployeeDescriptionsFromHtmlString:htmlString];
+        if (error == nil || employees.count > 0) {
+            
+            [weakSelf.tableView reloadData];
+            [weakSelf checkIfEmployeesNonempty];
+        }
+        else {
+            if ([error isNoInternetConnectionError]) {
 
-    NSData *xhtmlData = [htmlString xhtmlData];
-
-    _parser = [[TABHTMLParser alloc] init];
-
-    [_parser parseXHTMLData:xhtmlData completion:^(NSArray *employees, NSError *error) {
-        DLog(@"Number of employees: %d", employees.count);
+                DLog(@"No internet connection, can't fetch employees!");
+                // TODO: show a localized alert
+            }
+            else {
+                DLog(@"Can't fetch employees!");
+                // TODO: show generic error localized alert
+            }
+        }
     }];
 }
 
-- (NSData *) htmlDataFromSampleFile {
+- (void) checkIfEmployeesNonempty {
 
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:kHTMLTestFileName ofType:@"html"];
-    NSData *htmlData = [NSData dataWithContentsOfFile:filePath];
-    
-    return htmlData;
+    if (_employeesDataSource.employees.count == 0) {
+
+        DLog(@"Empty employees collection fetched!");
+        // TODO: show localized alert view
+    }
 }
 
 
-#pragma mark - Preparing html document for parsing
+#pragma mark - UITableViewDataSource
 
-- (NSString *) htmlEmployeeDescriptionsFromHtmlString:(NSString *)htmlString
-{
-    NSString *firstImportantTag = @"<div class=\"row\">";
-    NSString *resultString = @"";
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+    return _employeesDataSource.employees.count;
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
     
-    NSRange range = [htmlString rangeOfString:firstImportantTag];
+    static NSString *cellIdentifier = @"EmployeeCell";
     
-    if (NSNotFound != range.location) {
-        
-        resultString = [htmlString substringFromIndex:range.location];
-        resultString = [NSString stringWithFormat:@"<html>%@", resultString];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
-    return resultString;
+    [self configureCell:cell forIndexPath:indexPath];
+    return cell;
 }
 
+#pragma mark - TableViewCell Customization
+
+- (void) configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
+    
+    TABEmployee *employee = _employeesDataSource.employees[indexPath.row]; // TODO: unsafe!
+    
+    if (employee) {
+        cell.textLabel.text = employee.name;
+        cell.detailTextLabel.text = employee.title;
+    }
+    
+//    cell.imageView.image = [UIImage imageNamed:];
+}
 
 @end
