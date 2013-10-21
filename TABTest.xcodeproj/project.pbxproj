@@ -20,8 +20,7 @@
 		318E48D31812DD1300F2032A /* TABTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48D21812DD1300F2032A /* TABTestTests.m */; };
 		318E48F01812DEDA00F2032A /* TABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48ED1812DEDA00F2032A /* TABAppDelegate.m */; };
 		318E48F11812DEDA00F2032A /* TABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48EF1812DEDA00F2032A /* TABViewController.m */; };
-		318E48F61812DFCB00F2032A /* OurTeam.html in Resources */ = {isa = PBXBuildFile; fileRef = 318E48F51812DFCB00F2032A /* OurTeam.html */; };
-		318E48F71812DFCB00F2032A /* OurTeam.html in Resources */ = {isa = PBXBuildFile; fileRef = 318E48F51812DFCB00F2032A /* OurTeam.html */; };
+		6C5ACFFD7AA11AD1EDD8E147 /* People.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C5AC92DF7FEEB5A8735648D /* People.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,7 @@
 		318E48ED1812DEDA00F2032A /* TABAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABAppDelegate.m; sourceTree = "<group>"; };
 		318E48EE1812DEDA00F2032A /* TABViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABViewController.h; sourceTree = "<group>"; };
 		318E48EF1812DEDA00F2032A /* TABViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABViewController.m; sourceTree = "<group>"; };
-		318E48F51812DFCB00F2032A /* OurTeam.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = OurTeam.html; sourceTree = "<group>"; };
+		6C5AC92DF7FEEB5A8735648D /* People.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = People.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +189,7 @@
 		318E48F41812DFCA00F2032A /* TestData */ = {
 			isa = PBXGroup;
 			children = (
-				318E48F51812DFCB00F2032A /* OurTeam.html */,
+				6C5AC92DF7FEEB5A8735648D /* People.html */,
 			);
 			path = TestData;
 			sourceTree = "<group>";
@@ -269,7 +268,7 @@
 			files = (
 				318E48AC1812DD1200F2032A /* InfoPlist.strings in Resources */,
 				318E48BE1812DD1200F2032A /* ViewController.xib in Resources */,
-				318E48F61812DFCB00F2032A /* OurTeam.html in Resources */,
+				6C5ACFFD7AA11AD1EDD8E147 /* People.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +277,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				318E48D01812DD1300F2032A /* InfoPlist.strings in Resources */,
-				318E48F71812DFCB00F2032A /* OurTeam.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +417,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TABTest/TABTest-Prefix.pch";
 				INFOPLIST_FILE = "TABTest/TABTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -430,6 +429,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TABTest/TABTest-Prefix.pch";
 				INFOPLIST_FILE = "TABTest/TABTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
