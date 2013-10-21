@@ -7,10 +7,16 @@
 //
 
 #import "TABViewController.h"
+#import "TABHTMLParser.h"
+
+
+static NSString *const kHTMLTestFileName = @"People";
+
 
 @interface TABViewController ()
 
 @end
+
 
 @implementation TABViewController
 
@@ -18,8 +24,26 @@
 {
     [super viewDidLoad];
 
-    // temporarily - just parse html data from a local XML file
+    [self parseOfflineData]; // TODO: wire up network connection in here!
+}
+
+- (void) parseOfflineData {
+
+    NSData *htmlData = [self htmlDataFromSampleFile];
     
+    TABHTMLParser *parser = [[TABHTMLParser alloc] init];
+    
+    [parser parseData:htmlData completion:^(NSArray *items, NSError *error) {
+        DLog(@"Number of items: %d", items.count);
+    }];
+}
+
+- (NSData *) htmlDataFromSampleFile {
+
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:kHTMLTestFileName ofType:@"html"];
+    NSData *htmlData = [NSData dataWithContentsOfFile:filePath];
+    
+    return htmlData;
 }
 
 @end
