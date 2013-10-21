@@ -33,6 +33,7 @@
 		6C5AC68DDC2F686ACCD67511 /* NSString+Concatenation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5ACD7FB6A9DD0F595AC80E /* NSString+Concatenation.m */; };
 		6C5ACA712B99A9034B141AB7 /* TABEmployeesOfflineDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5AC2B0502F56A5A1B0BE3D /* TABEmployeesOfflineDataSource.m */; };
 		6C5ACAB6A6A13C3DAC8EF6DC /* NSArray+EmployeesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5AC910EC1A65225E174AF7 /* NSArray+EmployeesCollection.m */; };
+		6C5ACB935B3EE17F45943263 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5AC0452B8E14E7ED0E7CA2 /* Configuration.m */; };
 		6C5ACDDCD7E33954F5582CFC /* NSURLRequest+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5ACBD5477DADC9D46951FF /* NSURLRequest+Common.m */; };
 		6C5ACFFD7AA11AD1EDD8E147 /* People.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C5AC92DF7FEEB5A8735648D /* People.html */; };
 /* End PBXBuildFile section */
@@ -74,12 +75,14 @@
 		31B6D2F7181502D6007E99AF /* TABHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABHTMLParser.h; sourceTree = "<group>"; };
 		31B6D2F8181502D6007E99AF /* TABHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABHTMLParser.m; sourceTree = "<group>"; };
 		6C5AC012BD6F822BC463A46D /* TABMutableEmployee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMutableEmployee.h; sourceTree = "<group>"; };
+		6C5AC0452B8E14E7ED0E7CA2 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		6C5AC09B83611D458FE1C3D0 /* TABEmployee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABEmployee.m; sourceTree = "<group>"; };
 		6C5AC0CEE0D10A69874777EF /* NSString+XHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XHTML.m"; sourceTree = "<group>"; };
 		6C5AC15E61B71F2F2C4E8332 /* TABEmployeesNetworkDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABEmployeesNetworkDataSource.h; sourceTree = "<group>"; };
 		6C5AC2B0502F56A5A1B0BE3D /* TABEmployeesOfflineDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABEmployeesOfflineDataSource.m; sourceTree = "<group>"; };
 		6C5AC2D853C515B1D100A4C1 /* TABNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABNetworkManager.h; sourceTree = "<group>"; };
 		6C5AC3A8EBD522C241B0538A /* NSArray+EmployeesCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EmployeesCollection.h"; sourceTree = "<group>"; };
+		6C5AC3E86388CD9E553D2DA9 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
 		6C5AC49C0BA615B5973E9DF1 /* NSString+Concatenation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Concatenation.h"; sourceTree = "<group>"; };
 		6C5AC50238550CAC62D7AC32 /* NSString+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
 		6C5AC5A79D47D43D0154978C /* TABEmployee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABEmployee.h; sourceTree = "<group>"; };
@@ -203,6 +206,7 @@
 				318E48F31812DEE400F2032A /* ViewController */,
 				6C5ACA709CA9B63CEF89A99D /* Model */,
 				6C5AC81A2A59861CDFDEF877 /* NetworkManager */,
+				6C5AC8B724BA6DCD8BCB2321 /* Configuration */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -303,6 +307,15 @@
 				6C5AC9055CD12982865E3D15 /* TABNetworkManager.m */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		6C5AC8B724BA6DCD8BCB2321 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				6C5AC3E86388CD9E553D2DA9 /* Configuration.h */,
+				6C5AC0452B8E14E7ED0E7CA2 /* Configuration.m */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		6C5ACA709CA9B63CEF89A99D /* Model */ = {
@@ -440,6 +453,7 @@
 				6C5AC3E75195BC51E67A7EA1 /* TABEmployeesNetworkDataSource.m in Sources */,
 				6C5AC1F23B3ADDBDB72E1776 /* NSData+XHTMLEmployeeDescriptions.m in Sources */,
 				6C5ACDDCD7E33954F5582CFC /* NSURLRequest+Common.m in Sources */,
+				6C5ACB935B3EE17F45943263 /* Configuration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

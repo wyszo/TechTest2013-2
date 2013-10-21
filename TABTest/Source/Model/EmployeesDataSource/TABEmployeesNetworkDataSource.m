@@ -6,6 +6,7 @@
 #import "TABHTMLParser.h"
 #import "TABNetworkManager.h"
 #import "NSData+XHTMLEmployeeDescriptions.h"
+#import "Configuration.h"
 
 
 @interface TABEmployeesNetworkDataSource ()
@@ -41,10 +42,8 @@
 
     TABNetworkManager *networkManager = [[TABNetworkManager alloc] init];
     __weak TABEmployeesNetworkDataSource *weakSelf = self;
-
-    NSString *urlString = @"http://theappbusiness.net/people";
     
-    [networkManager asyncFetchHTMLPageWithURLString:urlString completion:^(NSData *htmlPage, NSError *error) {
+    [networkManager asyncFetchHTMLPageWithURLString:kTheAppBusinessPeoplePageURL completion:^(NSData *htmlPage, NSError *error) {
         
         BOOL success = (error != nil);
         DLog(@"Network HTML Page fetching success: %d", success);
