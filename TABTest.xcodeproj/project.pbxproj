@@ -20,6 +20,9 @@
 		318E48D31812DD1300F2032A /* TABTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48D21812DD1300F2032A /* TABTestTests.m */; };
 		318E48F01812DEDA00F2032A /* TABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48ED1812DEDA00F2032A /* TABAppDelegate.m */; };
 		318E48F11812DEDA00F2032A /* TABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E48EF1812DEDA00F2032A /* TABViewController.m */; };
+		31B6D2F9181502D6007E99AF /* NSError+CommonErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B6D2F3181502D6007E99AF /* NSError+CommonErrors.m */; };
+		31B6D2FA181502D6007E99AF /* TABHTMLParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B6D2F6181502D6007E99AF /* TABHTMLParseOperation.m */; };
+		31B6D2FB181502D6007E99AF /* TABHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B6D2F8181502D6007E99AF /* TABHTMLParser.m */; };
 		6C5AC17936C84B94691B8C8E /* TABEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5AC09B83611D458FE1C3D0 /* TABEmployee.m */; };
 		6C5AC3B125C228722352981E /* TABMutableEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5ACF5090D273EB610E0EE6 /* TABMutableEmployee.m */; };
 		6C5ACFFD7AA11AD1EDD8E147 /* People.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C5AC92DF7FEEB5A8735648D /* People.html */; };
@@ -55,6 +58,12 @@
 		318E48ED1812DEDA00F2032A /* TABAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABAppDelegate.m; sourceTree = "<group>"; };
 		318E48EE1812DEDA00F2032A /* TABViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABViewController.h; sourceTree = "<group>"; };
 		318E48EF1812DEDA00F2032A /* TABViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABViewController.m; sourceTree = "<group>"; };
+		31B6D2F2181502D6007E99AF /* NSError+CommonErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+CommonErrors.h"; sourceTree = "<group>"; };
+		31B6D2F3181502D6007E99AF /* NSError+CommonErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+CommonErrors.m"; sourceTree = "<group>"; };
+		31B6D2F5181502D6007E99AF /* TABHTMLParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABHTMLParseOperation.h; sourceTree = "<group>"; };
+		31B6D2F6181502D6007E99AF /* TABHTMLParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABHTMLParseOperation.m; sourceTree = "<group>"; };
+		31B6D2F7181502D6007E99AF /* TABHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABHTMLParser.h; sourceTree = "<group>"; };
+		31B6D2F8181502D6007E99AF /* TABHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABHTMLParser.m; sourceTree = "<group>"; };
 		6C5AC012BD6F822BC463A46D /* TABMutableEmployee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMutableEmployee.h; sourceTree = "<group>"; };
 		6C5AC09B83611D458FE1C3D0 /* TABEmployee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABEmployee.m; sourceTree = "<group>"; };
 		6C5AC5A79D47D43D0154978C /* TABEmployee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABEmployee.h; sourceTree = "<group>"; };
@@ -160,6 +169,8 @@
 		318E48DC1812DE1F00F2032A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				31B6D2F1181502D6007E99AF /* Categories */,
+				31B6D2F4181502D6007E99AF /* HTMLParser */,
 				318E48F21812DEDE00F2032A /* AppDelegate */,
 				318E48F31812DEE400F2032A /* ViewController */,
 				6C5ACA709CA9B63CEF89A99D /* Model */,
@@ -199,6 +210,26 @@
 				6C5AC92DF7FEEB5A8735648D /* People.html */,
 			);
 			path = TestData;
+			sourceTree = "<group>";
+		};
+		31B6D2F1181502D6007E99AF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				31B6D2F2181502D6007E99AF /* NSError+CommonErrors.h */,
+				31B6D2F3181502D6007E99AF /* NSError+CommonErrors.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		31B6D2F4181502D6007E99AF /* HTMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				31B6D2F5181502D6007E99AF /* TABHTMLParseOperation.h */,
+				31B6D2F6181502D6007E99AF /* TABHTMLParseOperation.m */,
+				31B6D2F7181502D6007E99AF /* TABHTMLParser.h */,
+				31B6D2F8181502D6007E99AF /* TABHTMLParser.m */,
+			);
+			path = HTMLParser;
 			sourceTree = "<group>";
 		};
 		6C5AC269F3C4EC40AA283C74 /* Employee */ = {
@@ -330,10 +361,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				318E48AE1812DD1200F2032A /* main.m in Sources */,
+				31B6D2F9181502D6007E99AF /* NSError+CommonErrors.m in Sources */,
 				318E48F01812DEDA00F2032A /* TABAppDelegate.m in Sources */,
+				31B6D2FB181502D6007E99AF /* TABHTMLParser.m in Sources */,
 				318E48F11812DEDA00F2032A /* TABViewController.m in Sources */,
 				6C5AC17936C84B94691B8C8E /* TABEmployee.m in Sources */,
 				6C5AC3B125C228722352981E /* TABMutableEmployee.m in Sources */,
+				31B6D2FA181502D6007E99AF /* TABHTMLParseOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
